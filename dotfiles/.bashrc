@@ -7,6 +7,7 @@ alias ll.='ls -ld .*'
 alias o='open .'
 
 ### git alias'
+alias g='git'
 alias tg='tig'
 alias ts='tig status'
 alias gc='git commit'
