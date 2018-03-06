@@ -21,6 +21,11 @@ PATH="$NPM_PACKAGES/bin:$PATH"
 
 export PS1='\[\e[32m\]\u@\h \[\e[33m\]\w \[\e[31m\]$(__git_ps1 "[%s]")\[\e[0m\]\n\$ '
 
+GIT_PS1_SHOWDIRTYSTATE=true
+GIT_PS1_SHOWUNTRACKEDFILES=true
+# GIT_PS1_SHOWSTASHSTATE=true
+GIT_PS1_SHOWUPSTREAM=auto
+
 # utils
 alias rm-resource-folk="find . \( -name '.DS_Store' -or -name '._*' -or -name 'Thumbs.db' -or -name 'Desktop.ini' \) -delete -print"
 alias rails-server-kill="cat tmp/pids/server.pid > /dev/null 2>/dev/null && (cat tmp/pids/server.pid 2> /dev/null | xargs kill -9 2> /dev/null && echo \"[OK] Rails server was killed...\" || echo \"[NG] Already exit...\") || echo \"[NG] Move to rails root directory path.\""
