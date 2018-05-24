@@ -14,6 +14,9 @@ alias tg='tig'
 alias ts='tig status'
 alias gc='git commit'
 
+### other alias
+alias mysqlserver='mysql.server'
+
 ### LS convert to GLS(ls GNU ver)
 alias ls='gls --color=auto'
 

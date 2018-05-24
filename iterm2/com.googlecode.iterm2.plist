@@ -234,7 +234,7 @@
 	<key>NSFontPanelAttributes</key>
 	<string>1, 0</string>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/Develop/settings/iterm2</string>
+	<string>~/Documents</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
 	<string>{712, 448}</string>
 	<key>NSNavPanelExpandedSizeForSaveMode</key>
@@ -273,9 +273,9 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>1169 110 445 289 0 0 1680 1050 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>267 554 796 473 0 0 1680 1050 </string>
+	<string>507 1530 918 494 -97 1050 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>180 331 730 477 0 0 1680 1050 </string>
+	<string>144 297 730 477 0 0 1680 1050 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -852,7 +852,7 @@
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
-			<false/>
+			<integer>1</integer>
 			<key>Right Option Key Sends</key>
 			<integer>0</integer>
 			<key>Rows</key>
@@ -918,7 +918,11 @@
 	<key>NoSyncInstallationId</key>
 	<string>B5A69F9A-AEBD-4503-99F1-36796138B013</string>
 	<key>NoSyncLastTipTime</key>
-	<real>541995847.95031297</real>
+	<real>543818023.07436001</real>
+	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
+	<true/>
+	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
+	<integer>0</integer>
 	<key>NoSyncPermissionToShowTip</key>
 	<true/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
@@ -944,6 +948,8 @@
 		<string>0015</string>
 		<string>0016</string>
 		<string>0017</string>
+		<string>0018</string>
+		<string>0019</string>
 	</array>
 	<key>PMPrintingExpandedStateForPrint2</key>
 	<false/>
@@ -993,7 +999,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-03-06T05:20:54Z</date>
+	<date>2018-03-28T05:11:22Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
