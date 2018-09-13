@@ -48,4 +48,4 @@ function process-count() {
   watch -n .5 "ps aux | grep  '$1' | wc -l"
 }
 
-alias rails-start-jst9="TZ=\"JST-9\" bundle exec rails s"
+alias rails-start-jst9="TZ=\"JST-9\" bin/rails s"
