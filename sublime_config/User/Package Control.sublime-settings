@@ -1,0 +1,57 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"ActionScript 3",
+		"AdvancedNewFile",
+		"AlignTab",
+		"All Autocomplete",
+		"ApacheConf",
+		"AppleScript Extensions",
+		"AutoFileName",
+		"BeautifyRuby",
+		"Better CoffeeScript",
+		"Boxy Theme",
+		"BracketHighlighter",
+		"Case Conversion",
+		"Codecs33",
+		"Compass",
+		"ConvertToUTF8",
+		"DashDoc",
+		"Dockerfile Syntax Highlighting",
+		"EditorConfig",
+		"Emmet",
+		"Git",
+		"GitGutter",
+		"HTML-CSS-JS Prettify",
+		"HTML5",
+		"JS Snippets",
+		"Package Control",
+		"Pretty JSON",
+		"random-sublime-text-plugin",
+		"RSpec",
+		"Ruby Completions",
+		"Ruby on Rails snippets",
+		"Sass",
+		"SCSS",
+		"SFTP",
+		"Smart Delete",
+		"Sublime Files",
+		"SublimeLinter",
+		"SublimeLinter-coffeelint",
+		"SublimeLinter-eslint",
+		"SublimeLinter-rubocop",
+		"SublimeLinter-ruby",
+		"Sublimerge 3",
+		"SyncedSideBar",
+		"TodoReview",
+		"Trimmer"
+	],
+	"repositories":
+	[
+		"https://github.com/kimpettersen/random-sublime-text-plugin"
+	]
+}

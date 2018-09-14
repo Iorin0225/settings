@@ -1,0 +1,6 @@
+{
+  "named_patterns": {
+     "rh": ".+:\\s/c0rl0l",
+     "lh": ".+:\\s/c0ll0l",
+  }
+}

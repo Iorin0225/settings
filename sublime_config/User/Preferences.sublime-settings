@@ -1,0 +1,23 @@
+{
+	"auto_complete": true,
+	"color_scheme": "Packages/Boxy Theme/schemes/Boxy Monokai.tmTheme",
+	"copy_with_empty_selection": true,
+	"detect_indentation": false,
+	"detect_slow_plugins": false,
+	"ensure_newline_at_eof_on_save": true,
+	"font_face": "Ricty",
+	"font_size": 18.0,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"index_files": true,
+	"rulers":
+	[
+		79
+	],
+	"tab_size": 2,
+	"theme": "Boxy Monokai.sublime-theme",
+	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": true
+}
