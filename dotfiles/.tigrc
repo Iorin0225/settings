@@ -15,3 +15,11 @@ set split-view-height = 80%
 
 # 空白を無視する
 set ignore-space = all
+
+# 色
+color date cyan default
+color graph-commit cyan default
+color "index " cyan default
+color "diff-tree " cyan default
+color "Merge: " white default
+color diff-stat cyan default

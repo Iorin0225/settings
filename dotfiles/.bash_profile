@@ -37,41 +37,42 @@ export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 export LANG=ja_JP.UTF-8
 
 # homebrew
-export PATH="$(brew --prefix)/bin:$(brew --prefix)/sbin:$PATH"
+# export PATH="$(brew --prefix)/bin:$(brew --prefix)/sbin:$PATH"
 
 # git_options
-source /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-completion.bash
-source /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-prompt.sh
+# source /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-completion.bash
+# source /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-prompt.sh
+
 
 # notification options
 alias noti='terminal-notifier -message'
 
 #bash_completion
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-  . $(brew --prefix)/etc/bash_completion
-fi
+# if [ -f $(brew --prefix)/etc/bash_completion ]; then
+#   . $(brew --prefix)/etc/bash_completion
+# fi
 
 # anyenv options
-export PATH="$HOME/.anyenv/bin:$PATH"
-eval "$(anyenv init - --no-rehash)"
-for D in `ls $HOME/.anyenv/envs`
-do
-    export PATH="$HOME/.anyenv/envs/$D/shims:$PATH"
-done
+# export PATH="$HOME/.anyenv/bin:$PATH"
+# eval "$(anyenv init - --no-rehash)"
+# for D in `ls $HOME/.anyenv/envs`
+# do
+#     export PATH="$HOME/.anyenv/envs/$D/shims:$PATH"
+# done
 
 # pyenv-virtualenv
 # MEMO: this is too heavy!!
-if which pyenv > /dev/null; then
-  eval "$(pyenv virtualenv-init -)"
-fi
+# if which pyenv > /dev/null; then
+#   eval "$(pyenv virtualenv-init -)"
+# fi
 
 # for Homebrew errors with pyenv
-alias brew="env PATH=${PATH/\/Users\/takc923\/\.phpenv\/shims:/} brew"
+# alias brew="env PATH=${PATH/\/Users\/takc923\/\.phpenv\/shims:/} brew"
 
 # for Java
 # export JAVA_HOME=`/usr/libexec/java_home -v 9
 
 # for Android 
-export ANDROID_HOME='/Users/iorin0225/Library/Android/sdk'
-export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+# export ANDROID_HOME='/Users/iorin0225/Library/Android/sdk'
+# export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 

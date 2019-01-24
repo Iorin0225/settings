@@ -18,7 +18,8 @@ alias gc='git commit'
 alias mysqlserver='mysql.server'
 
 ### LS convert to GLS(ls GNU ver)
-alias ls='gls --color=auto'
+# alias ls='gls --color=auto'
+alias ls='ls --color=auto'
 
 # eval $(gdircolors ~/.dircolors-solarized)
 NPM_PACKAGES="${HOME}/.npm-packages"
