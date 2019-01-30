@@ -6,7 +6,7 @@ alias ll.='ls -ld .*'
 # alias sublime='open -a "sublime text 2"'
 alias o='open .'
 
-alias rm='trash'
+# alias rm='trash'
 
 ### git alias'
 alias g='git'
