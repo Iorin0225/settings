@@ -2,6 +2,10 @@ export PATH=/usr/local/bin:${PATH}
 if [ -f ~/.bashrc ]; then
         . ~/.bashrc
 fi
+
+if [ -f ~/.bashrc_custom ]; then
+        . ~/.bashrc_custom
+fi
 ##
 # Your previous /Users/osada/.bash_profile file was backed up as /Users/osada/.bash_profile.macports-saved_2011-09-15_at_02:21:18
 ##
@@ -71,7 +75,9 @@ alias brew="env PATH=${PATH/\/Users\/takc923\/\.phpenv\/shims:/} brew"
 # for Java
 # export JAVA_HOME=`/usr/libexec/java_home -v 9
 
-# for Android 
+# for Android
 export ANDROID_HOME='/Users/iorin0225/Library/Android/sdk'
 export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+
+export PATH="$HOME/.rbenv/bin:$PATH"
 
