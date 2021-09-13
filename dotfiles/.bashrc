@@ -8,17 +8,20 @@ alias o='open .'
 
 alias rm='trash'
 
+alias hs='history'
+
 ### git alias'
 alias g='git'
 alias tg='tig'
 alias ts='tig status'
 alias gc='git commit'
+alias git-submodule-up-to-date='git submodule update --init --recursive'
 
 ### other alias
 alias mysqlserver='mysql.server'
 
 ### LS convert to GLS(ls GNU ver)
-alias ls='gls --color=auto'
+# alias ls='gls --color=auto'
 
 # eval $(gdircolors ~/.dircolors-solarized)
 NPM_PACKAGES="${HOME}/.npm-packages"
@@ -37,7 +40,7 @@ alias rails-server-kill="cat tmp/pids/server.pid > /dev/null 2>/dev/null && (cat
 
 function rm-without() {
   find . -type f | sed 's/^\.\///' | grep -v ^$1$ | xargs rm -f
-  find . -type d -empty -delete 
+  find . -type d -empty -delete
 }
 
 function ps-grep() {
@@ -49,3 +52,9 @@ function process-count() {
 }
 
 alias rails-start-jst9="TZ=\"JST-9\" bin/rails s"
+
+# rubocop
+alias rubocop-diff='cat <(git ls-files -o --exclude-standard) <(git diff --name-only --diff-filter=d) | grep "\.\(rb\|rake\)" | grep -v schema | xargs rubocop -EaA'
+
+# notify
+alias notify="echo 'Process Has Done.' | terminal-notifier -sound default"
