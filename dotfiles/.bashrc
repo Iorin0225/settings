@@ -37,6 +37,7 @@ GIT_PS1_SHOWUPSTREAM=auto
 # utils
 alias rm-resource-folk="find . \( -name '.DS_Store' -or -name '._*' -or -name 'Thumbs.db' -or -name 'Desktop.ini' \) -delete -print"
 alias rails-server-kill="cat tmp/pids/server.pid > /dev/null 2>/dev/null && (cat tmp/pids/server.pid 2> /dev/null | xargs kill -9 2> /dev/null && echo \"[OK] Rails server was killed...\" || echo \"[NG] Already exit...\") || echo \"[NG] Move to rails root directory path.\""
+alias docker-clean-cache="docker builder prune -a --filter type=regular"
 
 function rm-without() {
   find . -type f | sed 's/^\.\///' | grep -v ^$1$ | xargs rm -f
@@ -54,7 +55,7 @@ function process-count() {
 alias rails-start-jst9="TZ=\"JST-9\" bin/rails s"
 
 # rubocop
-alias rubocop-diff='cat <(git ls-files -o --exclude-standard) <(git diff --name-only --diff-filter=d) | grep "\.\(rb\|rake\)" | grep -v schema | xargs rubocop -EaA'
+alias rubocop-diff='cat <(git ls-files -o --exclude-standard) <(git diff --name-only --diff-filter=d) | grep "\.\(rb\|rake\)" | grep -v schema | xargs bundle exec rubocop -EA'
 
 # notify
-alias notify="echo 'Process Has Done.' | terminal-notifier -sound default"
+alias notify="echo 'Process Has Done.' | terminal-notifier -sound default -ignoreDnD"
