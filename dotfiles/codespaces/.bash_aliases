@@ -16,6 +16,13 @@ alias git-submodule-up-to-date='git submodule update --init --recursive'
 ### other alias
 alias mysqlserver='mysql.server'
 
+export PS1='\[\e[32m\]\u@\h \[\e[33m\]\w \[\e[31m\]$(__git_ps1 "[%s]")\[\e[0m\]\n\$ '
+
+GIT_PS1_SHOWDIRTYSTATE=true
+GIT_PS1_SHOWUNTRACKEDFILES=true
+# GIT_PS1_SHOWSTASHSTATE=true
+GIT_PS1_SHOWUPSTREAM=auto
+
 ### LS convert to GLS(ls GNU ver)
 # alias ls='gls --color=auto'
 
