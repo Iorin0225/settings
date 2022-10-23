@@ -23,6 +23,11 @@ GIT_PS1_SHOWUNTRACKEDFILES=true
 # GIT_PS1_SHOWSTASHSTATE=true
 GIT_PS1_SHOWUPSTREAM=auto
 
+# This might be needed, depending on codespaces env
+# if [ -f /etc/bash_completion.d/git-prompt ]; then
+#   . /etc/bash_completion.d/git-prompt
+# fi
+
 ### LS convert to GLS(ls GNU ver)
 # alias ls='gls --color=auto'
 
