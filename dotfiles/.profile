@@ -1,23 +1,29 @@
-export PATH=/usr/local/bin:${PATH}
-if [ -f ~/.bashrc ]; then
-        . ~/.bashrc
-fi
+. ~/.functions
 
-if [ -f ~/.bashrc_custom ]; then
-        . ~/.bashrc_custom
+export PATH=/usr/local/bin:${PATH}
+if is_bash_shell; then
+  if [ -f ~/.bashrc ]; then
+          . ~/.bashrc
+  fi
+
+  if [ -f ~/.bashrc_custom ]; then
+          . ~/.bashrc_custom
+  fi
+else
+  if [ -f ~/.zshrc ]; then
+          . ~/.zshrc
+  fi
+
+  if [ -f ~/.zshrc_custom ]; then
+          . ~/.zshrc_custom
+  fi
 fi
-##
-# Your previous /Users/osada/.bash_profile file was backed up as /Users/osada/.bash_profile.macports-saved_2011-09-15_at_02:21:18
-##
 
 # MacPorts Installer addition on 2011-09-15_at_02:21:18: adding an appropriate PATH variable for use with MacPorts.
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 # Finished adapting your PATH environment variable for use with MacPorts.
 
 
-##
-# Your previous /Users/iorin0225/.bash_profile file was backed up as /Users/iorin0225/.bash_profile.macports-saved_2012-08-31_at_14:46:48
-##
 
 # MacPorts Installer addition on 2012-08-31_at_14:46:48: adding an appropriate PATH variable for use with MacPorts.
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
@@ -29,9 +35,6 @@ export PATH=/usr/local/bin:${PATH}
 # For UpTex In Terminal
 export PATH=/Applcations/UpTeX.app/teTeX/bin:$PATH
 
-##
-# Your previous /Users/iorin0225/.bash_profile file was backed up as /Users/iorin0225/.bash_profile.macports-saved_2014-10-20_at_12:58:32
-##
 
 # MacPorts Installer addition on 2014-10-20_at_12:58:32: adding an appropriate PATH variable for use with MacPorts.
 export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
@@ -41,18 +44,36 @@ export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 export LANG=ja_JP.UTF-8
 
 # homebrew
-export PATH="$(brew --prefix)/bin:$(brew --prefix)/sbin:$PATH"
+if is_bash_shell; then
+  export PATH="$(brew --prefix)/bin:$(brew --prefix)/sbin:$PATH"
+else
+  # Set PATH, MANPATH, etc., for Homebrew.
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
 
 # git_options
-source /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-completion.bash
-source /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-prompt.sh
+if is_bash_shell; then
+  source /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-completion.bash
+  source /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-prompt.sh
+else
+  # source /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-completion.zsh
+  source /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-prompt.sh
+fi
+
+# for Google Cloud SDK
+if is_bash_shell; then
+  source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.bash.inc
+  source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.bash.inc
+fi
 
 # notification options
 alias noti='terminal-notifier -message'
 
 #bash_completion
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-  . $(brew --prefix)/etc/bash_completion
+if is_bash_shell; then
+  if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    . $(brew --prefix)/etc/bash_completion
+  fi
 fi
 
 # anyenv options
@@ -90,7 +111,3 @@ export PATH="/usr/local/opt/openssl/bin:$PATH"
 export PATH="/usr/local/opt/curl-openssl/bin:$PATH"
 export PATH="/usr/local/opt/icu4c/bin:$PATH"
 export PATH="/usr/local/opt/icu4c/sbin:$PATH"
-
-# for Google Cloud SDK
-source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.bash.inc
-source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.bash.inc
