@@ -56,8 +56,11 @@ if is_bash_shell; then
   source /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-completion.bash
   source /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-prompt.sh
 else
-  # source /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-completion.zsh
-  source /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-prompt.sh
+  source /Library/Developer/CommandLineTools/usr/share/git-core/git-prompt.sh
+  # source /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.zsh
+  fpath=(~/.zsh $fpath)
+  zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
+  autoload -Uz compinit && compinit
 fi
 
 # for Google Cloud SDK
