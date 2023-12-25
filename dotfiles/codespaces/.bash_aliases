@@ -51,4 +51,4 @@ function process-count() {
 alias rails-start-jst9="TZ=\"JST-9\" bin/rails s"
 
 # rubocop
-alias rubocop-diff='cat <(git ls-files -o --exclude-standard) <(git diff --name-only --diff-filter=d) | grep "\.\(rb\|rake\)" | grep -v schema | xargs rubocop -EaA'
+alias rubocop-diff='cat <(git ls-files -o --exclude-standard) <(git diff --name-only --diff-filter=d) | grep "\.\(rb\|rake\)" | grep -v schema | xargs rubocop -EA'
