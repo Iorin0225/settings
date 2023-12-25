@@ -6,6 +6,7 @@ path=`pwd`
 # mv ~/.tigrc ~/.tigrc.orig
 ln -s $path/.vimrc ~/.vimrc
 ln -s $path/.tigrc ~/.tigrc
+ln -s $path/.pryrc ~/.pryrc
 
 if is_bash_shell; then
   mv ~/.bash_profile ~/.bash_profile.orig
@@ -29,3 +30,5 @@ rm ~/.functions
 ln -s $path/.functions ~/.functions
 
 echo "Installed"
+
+
