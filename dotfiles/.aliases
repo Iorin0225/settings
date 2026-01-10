@@ -19,6 +19,10 @@ alias ts='tig status'
 alias gc='git commit'
 alias git-submodule-up-to-date='git submodule update --init --recursive'
 
+alias git-branch-recent='git branch --sort=committerdate'
+
+alias db-schema-discard='git checkout -- db/schema.rb'
+
 ### other alias
 alias mysqlserver='mysql.server'
 
@@ -66,6 +70,14 @@ alias rails-start-jst9="TZ=\"JST-9\" bin/rails s"
 
 # rubocop
 alias rubocop-diff='cat <(git ls-files -o --exclude-standard) <(git diff --name-only --diff-filter=d) | grep "\.\(rb\|rake\)" | grep -v schema | xargs bundle exec rubocop -EA'
+alias rubocop-cached='git diff --cached --name-only | grep "\.\(rb\|rake\)" | grep -v schema | xargs bundle exec rubocop -EA'
+
+# github
+alias git-add-cached='git diff --cached --name-only | xargs git add'
 
 # notify
 alias notify="echo 'Process Has Done.' | terminal-notifier -sound default -ignoreDnD"
+
+# mysql8.0
+alias gem-mysql-install='gem install mysql2 -- --with-mysql-config=$(brew --prefix mysql)/bin/mysql_config --with-ldflags=-L$(brew --prefix zstd)/lib --with-cppflags=-I$(brew --prefix zstd)/include'
+alias gem-mysql-install-055='gem install mysql2 -v 0.5.5 -- --with-mysql-config=$(brew --prefix mysql)/bin/mysql_config --with-ldflags=-L$(brew --prefix zstd)/lib --with-cppflags=-I$(brew --prefix zstd)/include'

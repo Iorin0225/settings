@@ -96,6 +96,10 @@ fi
 # for Homebrew errors with pyenv
 alias brew="env PATH=${PATH/\/Users\/takc923\/\.phpenv\/shims:/} brew"
 
+# for Python3 with local
+alias python='/usr/bin/python3'
+alias pip='/usr/bin/pip3'
+
 # for Java
 # export JAVA_HOME=`/usr/libexec/java_home -v 9
 
@@ -114,3 +118,12 @@ export PATH="/usr/local/opt/openssl/bin:$PATH"
 export PATH="/usr/local/opt/curl-openssl/bin:$PATH"
 export PATH="/usr/local/opt/icu4c/bin:$PATH"
 export PATH="/usr/local/opt/icu4c/sbin:$PATH"
+
+GPG_TTY=$(tty)
+export GPG_TTY
+
+# # macos sonoma
+# export PATH="/opt/homebrew/opt/zstd/bin:$PATH"
+# export LDFLAGS="-L/opt/homebrew/opt/zstd/lib"
+# export CPPFLAGS="-I/opt/homebrew/opt/zstd/include"
+# export PKG_CONFIG_PATH="/opt/homebrew/opt/zstd/lib/pkgconfig"

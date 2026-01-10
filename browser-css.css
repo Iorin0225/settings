@@ -1,0 +1,15 @@
+@charset "utf-8";
+
+/* ! 2024-02-16 https://yuchrszk.blogspot.com
+yuchrszk.blogspot.com##.slider-wrapper */
+
+/* ! 2024-03-06 https://salon.jp */
+/* salon.jp##.article-body p img */
+
+/* ! 2024-03-07 https://twitter.com */
+
+/* <div data-testid="sidebarColumn">..<aside aria-label="Trending">..</aside>..</div> */
+div[data-testid="sidebarColumn"] div[aria-label="Timeline: Trending now"],
+div[data-testid="sidebarColumn"] div[aria-label="Subscribe to Premium"] {
+    display: none !important;
+}
