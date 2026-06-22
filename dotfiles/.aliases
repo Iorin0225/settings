@@ -72,8 +72,13 @@ alias rails-start-jst9="TZ=\"JST-9\" bin/rails s"
 alias rubocop-diff='cat <(git ls-files -o --exclude-standard) <(git diff --name-only --diff-filter=d) | grep "\.\(rb\|rake\)" | grep -v schema | xargs bundle exec rubocop -EA'
 alias rubocop-cached='git diff --cached --name-only | grep "\.\(rb\|rake\)" | grep -v schema | xargs bundle exec rubocop -EA'
 
-# github
+# git
 alias git-add-cached='git diff --cached --name-only | xargs git add'
+alias git-diff-branch-stat='git diff master...HEAD --stat'
+alias git-diff-branch-file='git diff master...HEAD -- '
+
+# process
+alias ps-count-50="ps -axo user,pid,ppid,comm | awk '{print \$4}' | sort | uniq -c | sort -nr | head -50"
 
 # notify
 alias notify="echo 'Process Has Done.' | terminal-notifier -sound default -ignoreDnD"
