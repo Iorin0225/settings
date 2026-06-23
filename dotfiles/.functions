@@ -1,0 +1,7 @@
+function is_bash_shell() {
+  if [ $SHELL = "/bin/bash" ]; then
+    true
+  else
+    false
+  fi
+}
