@@ -2,33 +2,35 @@ path=`pwd`
 
 . $path/.functions
 
-# mv ~/.vimrc ~/.vimrc.orig
-# mv ~/.tigrc ~/.tigrc.orig
-ln -s $path/.vimrc ~/.vimrc
-ln -s $path/.tigrc ~/.tigrc
-ln -s $path/.pryrc ~/.pryrc
+# Back up only if a real (non-symlink) file exists and no backup yet.
+backup() {
+  if [ -e "$1" ] && [ ! -L "$1" ] && [ ! -e "$1.orig" ]; then
+    mv "$1" "$1.orig"
+  fi
+}
+
+ln -sf $path/.vimrc ~/.vimrc
+ln -sf $path/.tigrc ~/.tigrc
+ln -sf $path/.pryrc ~/.pryrc
 
 if is_bash_shell; then
-  mv ~/.bash_profile ~/.bash_profile.orig
-  mv ~/.bashrc ~/.bashrc.orig
+  backup ~/.bash_profile
+  backup ~/.bashrc
 
-  ln -s $path/.profile ~/.bash_profile
-  ln -s $path/.bashrc ~/.bashrc
+  ln -sf $path/.profile ~/.bash_profile
+  ln -sf $path/.bashrc ~/.bashrc
 else
-  # mv ~/.zprofile ~/.zprofile.orig
-  # mv ~/.zshrc ~/.zshrc.orig
+  backup ~/.zprofile
+  backup ~/.zshrc
 
-  ln -siv $path/.profile ~/.zprofile
-  ln -siv $path/.zshrc ~/.zshrc
+  ln -sf $path/.profile ~/.zprofile
+  ln -sf $path/.zshrc ~/.zshrc
   echo 'Zsh!!'
 fi
 
-# mv ~/.aliases ~/.aliases.orig
-ln -s $path/.aliases ~/.aliases
+backup ~/.aliases
+ln -sf $path/.aliases ~/.aliases
 
-rm ~/.functions
-ln -s $path/.functions ~/.functions
+ln -sf $path/.functions ~/.functions
 
 echo "Installed"
-
-

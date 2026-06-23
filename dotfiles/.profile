@@ -65,8 +65,8 @@ fi
 
 # for Google Cloud SDK
 if is_bash_shell; then
-  source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.bash.inc
-  source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.bash.inc
+  source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.bash.inc"
+  source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.bash.inc"
 fi
 
 # notification options
@@ -81,20 +81,19 @@ fi
 
 # anyenv options
 export PATH="$HOME/.anyenv/bin:$PATH"
-eval "$(anyenv init - --no-rehash)"
-for D in `ls $HOME/.anyenv/envs`
-do
-    export PATH="$HOME/.anyenv/envs/$D/shims:$PATH"
-done
+if which anyenv > /dev/null; then
+  eval "$(anyenv init - --no-rehash)"
+  for D in `ls $HOME/.anyenv/envs`
+  do
+      export PATH="$HOME/.anyenv/envs/$D/shims:$PATH"
+  done
+fi
 
 # pyenv-virtualenv
 # MEMO: this is too heavy!!
 if which pyenv > /dev/null; then
   eval "$(pyenv virtualenv-init -)"
 fi
-
-# for Homebrew errors with pyenv
-alias brew="env PATH=${PATH/\/Users\/takc923\/\.phpenv\/shims:/} brew"
 
 # for Python3 with local
 alias python='/usr/bin/python3'
@@ -110,14 +109,14 @@ export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 export PATH="$HOME/.rbenv/bin:$PATH"
 
 # for php7.2
-export PATH="/usr/local/opt/php@7.2/bin:$PATH"
-export PATH="/usr/local/opt/php@7.2/sbin:$PATH"
+export PATH="$(brew --prefix)/opt/php@7.2/bin:$PATH"
+export PATH="$(brew --prefix)/opt/php@7.2/sbin:$PATH"
 
 # for curl and OpenSSL
-export PATH="/usr/local/opt/openssl/bin:$PATH"
-export PATH="/usr/local/opt/curl-openssl/bin:$PATH"
-export PATH="/usr/local/opt/icu4c/bin:$PATH"
-export PATH="/usr/local/opt/icu4c/sbin:$PATH"
+export PATH="$(brew --prefix)/opt/openssl/bin:$PATH"
+export PATH="$(brew --prefix)/opt/curl-openssl/bin:$PATH"
+export PATH="$(brew --prefix)/opt/icu4c/bin:$PATH"
+export PATH="$(brew --prefix)/opt/icu4c/sbin:$PATH"
 
 GPG_TTY=$(tty)
 export GPG_TTY
